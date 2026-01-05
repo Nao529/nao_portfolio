@@ -1,0 +1,339 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #071428;
+  color: #dbe6f2;
+  transition: background 0.4s, color 0.4s;
+}
+/* main grid */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "he"
+    "na"
+    "ar"
+    "fo";
+  height: 100vh;
+  gap: 10px;
+  padding: 10px;
+}
+/* vaz szerkezet */
+header {
+  grid-area: he;
+  background: #0f2a44;
+  padding: 20px;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  transition: background 0.4s;
+}
+nav {
+  grid-area: na;
+  background: #1b3660;
+  padding: 15px;
+  border-radius: 4px;
+  transition: background 0.4s;
+}
+article {
+  grid-area: ar;
+  background: #0f2a44;
+  padding: 20px;
+  border-radius: 4px;
+  transition: background 0.4s;
+}
+footer {
+  grid-area: fo;
+  background: #1b3660;
+  padding: 15px;
+  text-align: center;
+  border-radius: 4px;
+  transition: background 0.4s;
+}
+/* header */
+.header-bal {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  padding: 6px 10px;
+  cursor: default;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+.header-bal:hover {
+  transform: translateX(5px);
+  color: #5ea0ff;
+}
+.header-jobb {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 15px;
+}
+.tema-ikon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  transition: transform 0.3s, opacity 0.3s;
+  outline: none;
+}
+.tema-ikon:hover,
+.tema-ikon:focus {
+  transform: scale(1.2);
+  opacity: 1;
+}
+/* nav sav */
+.nav-lista {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  justify-content: center;
+  gap: 50px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.nav-lista a {
+  text-decoration: none;
+  color: #dbe6f2;
+  padding: 15px;
+  border-radius: 4px;
+  position: relative;
+}
+.nav-lista a:hover {
+  background: rgba(94,160,255,0.2);
+}
+#aktiv {
+  font-weight: bold;
+}
+#aktiv::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 2px;
+  background-color: #5ea0ff;
+  border-radius: 1px;
+}
+/* projektek */
+.projektek-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+.projekt-kartya {
+  background: #1b3660;
+  padding: 40px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, background 0.3s, color 0.4s;
+}
+.projekt-kartya:hover {
+  transform: translateY(-5px);
+  background: #234a85;
+}
+.projekt-cim {
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+.projekt-leiras {
+  position: absolute;
+  inset: 0;
+  background: rgba(7,20,40,0.95);
+  display: grid;
+  align-content: center;
+  gap: 15px;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.4s ease, background 0.4s, color 0.4s;
+  z-index: 2;
+}
+.projekt-kartya:hover .projekt-leiras {
+  transform: translateY(0);
+}
+.projekt-gomb {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #5ea0ff;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+/* tablazat */
+.tablazat {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #1b3660;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.tablazat th,
+.tablazat td {
+  padding: 14px 16px;
+  text-align: left;
+}
+.tablazat th {
+  width: 40%;
+  background: #162f52;
+  font-weight: 600;
+  color: #dbe6f2;
+}
+.tablazat td {
+  color: #ffffff;
+}
+.tablazat tr:hover th,
+.tablazat tr:hover td {
+  background: #234a85;
+  transition: background 0.3s;
+}
+audio {
+  width: 100%;
+  margin-top: 5px;
+  filter: invert(90%) hue-rotate(180deg);
+}
+/* github blokk */
+.github-blokk {
+  margin-top: 40px;
+  padding: 25px;
+  text-align: center;
+  background: #1b3660;
+  border-radius: 8px;
+  transition: background 0.4s, color 0.4s;
+}
+.github-blokk p,
+.github-blokk a {
+  color: #ffffff;
+  transition: color 0.4s, background 0.4s;
+}
+.github-blokk a {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1px solid #5ea0ff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+}
+/* 🌞 vilagos tema */
+body:has(.nap:focus) {
+  background: #d8ebfc;
+  color: #072c4d;
+}
+body:has(.nap:focus) header,
+body:has(.nap:focus) article {
+  background: #ffffff;
+  color: #072c4d;
+}
+body:has(.nap:focus) nav,
+body:has(.nap:focus) footer {
+  background: #c7def5;
+  color: #072c4d;
+}
+body:has(.nap:focus) .nav-lista a,
+body:has(.nap:focus) #aktiv {
+  color: #072c4d;
+}
+body:has(.nap:focus) .projekt-kartya {
+  background: #cfe6f9;
+  color: #072c4d;
+}
+body:has(.nap:focus) .projekt-leiras {
+  background: rgba(214,232,250,0.95);
+  color: #072c4d;
+}
+body:has(.nap:focus) .tablazat th,
+body:has(.nap:focus) .tablazat td {
+  color: #072c4d;
+  background: #e0f0ff;
+}
+body:has(.nap:focus) .tablazat tr:hover th,
+body:has(.nap:focus) .tablazat tr:hover td {
+  background: #b3dbff;
+}
+body:has(.nap:focus) .github-blokk {
+  background: #cfe6f9;
+}
+body:has(.nap:focus) .github-blokk p,
+body:has(.nap:focus) .github-blokk a {
+  color: #072c4d;
+  border-color: #5ea0ff;
+}
+/* 🌙 sotet tema */
+body:has(.hold:focus) {
+  background: #02072a;
+  color: #cfd8e3;
+}
+body:has(.hold:focus) header,
+body:has(.hold:focus) article {
+  background: #08153a;
+  color: #cfd8e3;
+}
+body:has(.hold:focus) nav,
+body:has(.hold:focus) footer {
+  background: #050d24;
+  color: #cfd8e3;
+}
+body:has(.hold:focus) .nav-lista a,
+body:has(.hold:focus) #aktiv {
+  color: #e0eaf5;
+}
+body:has(.hold:focus) .projekt-kartya {
+  background: #0b2a55;
+  color: #e0eaf5;
+}
+body:has(.hold:focus) .projekt-leiras {
+  background: rgba(8,20,40,0.95);
+  color: #e0eaf5;
+}
+body:has(.hold:focus) .tablazat th,
+body:has(.hold:focus) .tablazat td {
+  color: #e0eaf5;
+  background: #0a1b3b;
+}
+body:has(.hold:focus) .tablazat tr:hover th,
+body:has(.hold:focus) .tablazat tr:hover td {
+  background: #0f2a55;
+}
+body:has(.hold:focus) .github-blokk {
+  background: #0b2a55;
+}
+body:has(.hold:focus) .github-blokk p,
+body:has(.hold:focus) .github-blokk a {
+  color: #e0eaf5;
+  border-color: #5ea0ff;
+}
+/* reszponzivitas */
+@media (hover:none){
+  .projekt-leiras{transform:translateY(0);}
+}
+@media (max-width:1200px){
+  .projektek-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+@media (max-width:900px){
+  .projektek-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+@media (max-width:600px){
+  .projektek-grid{
+    grid-template-columns:1fr;
+  }
+}
+@media (max-width:500px){
+  .tablazat th,.tablazat td{
+    padding:10px;
+  }
+}
